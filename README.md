@@ -1,6 +1,6 @@
-# emmet-ls
+# emmet-language-server
 
-Emmet language server, with support for `styled` (`.ts`).
+Emmet Language Server, with support for CSS within `styled` (`.ts` files).
 
 ## Install
 
@@ -15,22 +15,17 @@ npm install -g emmet-language-server
 With [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig):
 
 ```lua
-local lspconfig = require('lspconfig')
-local configs = require('lspconfig/configs')
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require 'cmp_nvim_lsp'.default_capabilities();
+
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.emmet_ls.setup({
-    -- on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
-    init_options = {
-      html = {
-        options = {
-          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-          ["bem.enabled"] = true,
-        },
-      },
-    }
-})
+require 'lspconfig'.emmet_ls.setup {
+  cmd = { "emmet-language-server", "--stdio" },
+  capabilities = capabilities,
+  -- on_attach = on_attach,
+  filetypes = {
+    'html', 'typescript', 'typescriptreact', 'javascriptreact', 'css', 'sass', 
+    'scss', 'less'
+  },
+}
 ```
