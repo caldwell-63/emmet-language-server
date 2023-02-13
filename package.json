@@ -1,15 +1,14 @@
 {
 	"name": "emmet-language-server",
 	"description": "Emmet Language Server",
-	"version": "0.1.0",
-	"author": "aca",
-	"license": "MIT",
+	"version": "0.1.1",
+	"author": "caldwell-63",
 	"engines": {
 		"node": "*"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/aca/emmet-ls"
+		"url": "https://github.com/caldwell-63/emmet-language-server"
 	},
 	"dependencies": {
 		"@types/node": "^18.13.0",

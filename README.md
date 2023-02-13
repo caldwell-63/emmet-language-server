@@ -1,13 +1,16 @@
 # emmet-ls
 
-#### Install
+Emmet language server, with support for `styled` (`.ts`).
+
+## Install
+
 ```
-npm install -g emmet-ls
+npm install -g emmet-language-server
 ```
 
-#### Configuration 
+## Configuration 
 
-##### Example Configuration
+### Example Configuration
 
 With [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig):
 
@@ -31,8 +34,3 @@ lspconfig.emmet_ls.setup({
     }
 })
 ```
-
-##### Supported Filetypes
-
-- `html`, `typescriptreact`, `javascriptreact`, `css`, `sass`, `scss` and `less` filetypes are fully supported.
-- Any other filetype is treated as `html`.
